@@ -20,6 +20,9 @@ var a,b, calculator = (function() {
             } else {
                 return this.factorial(a - 1) * a;
             }
+        },
+        modulo: function(a, b) {
+            return a % b;
         }
     };
 })();

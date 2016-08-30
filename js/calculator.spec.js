@@ -26,4 +26,8 @@ describe('Tests', function() {
       it('should factorial a number', function() {
         expect(calculator.factorial(3)).toBe(6);
       });
+
+      it('should modulo two numbers', function() {
+        expect(calculator.modulo(5,3)).toBe(2);
+      });
 });
