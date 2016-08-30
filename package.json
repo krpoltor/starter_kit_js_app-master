@@ -1,14 +1,20 @@
 {
-  "name": "sk_js_app",
-  "description": "SK JS demo",
-  "author": "Tomasz Szewcow",
+  "name": "starterkit_js_app",
+  "description": "SarterKit JS demo",
+  "author": "KRPOLTOR",
   "version": "0.0.1",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tszewcow/starter_kit_js_app.git"
+    "url": "https://github.com/krpoltor/starter_kit_js_app.git"
   },
   "engine": "node >= 0.10.0",
   "dependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.2.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "phantomjs-prebuilt": "^2.1.12"
   }
 }
