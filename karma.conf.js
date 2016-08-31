@@ -1,11 +1,11 @@
 // Karma configuration
-// Generated on Tue Aug 30 2016 08:41:24 GMT+0200 (W. Europe Daylight Time)
+// Generated on Wed Aug 31 2016 10:47:10 GMT+0200 (W. Europe Daylight Time)
 
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: 'C:\projects\starter_kit_js_app-master',
+    basePath: '',
 
 
     // frameworks to use
@@ -15,7 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'js/calculator.js','js/calculator.spec.js'
+      'js/calculator.js',
+      'js/calculator.spec.js'
     ],
 
 
@@ -55,7 +56,10 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'PhantomJS'],
+    browsers: [
+      'Chrome',
+      //'PhantomJS'
+    ],
 
 
     // Continuous Integration mode
