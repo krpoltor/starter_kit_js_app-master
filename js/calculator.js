@@ -1,54 +1,77 @@
 "use strict";
 
 var
-    isValidType = function(a, b) {
-        return (typeof a == "number" && (typeof a === typeof b) && !isNaN(a) && !isNaN(b));
+    isOfValidType = function(a, b) {
+        return (typeof a == "number" && typeof b == "number" && !isNaN(a) && !isNaN(b));
     },
-    calculator = (function() {
-        return {
-            add: function(a, b) {
-                if (isValidType(a, b)) {
+    Calculator = (function() {
+
+        var self = this,
+            _privateAdd = function(a, b) {
+                if (isOfValidType(a, b)) {
                     return a + b;
                 } else {
                     throw new Error("Input not a number");
                 }
             },
-            substract: function(a, b) {
-                if (isValidType(a, b)) {
+            _privateSubstract = function(a, b) {
+                if (isOfValidType(a, b)) {
                     return a - b;
                 } else {
                     throw new Error("Input not a number");
                 }
             },
-            multiply: function(a, b) {
-                if (isValidType(a, b)) {
+            _privateMultiply = function(a, b) {
+                if (isOfValidType(a, b)) {
                     return a * b;
                 } else {
                     throw new Error("Input not a number");
                 }
             },
-            divide: function(a, b) {
-                if (isValidType(a, b)) {
+            _privateDivide = function(a, b) {
+                if (isOfValidType(a, b) && b != 0) {
                     return a / b;
+                } else if (b === 0) {
+                    throw new Error("Cannot divide by 0");
                 } else {
                     throw new Error("Input not a number");
                 }
             },
-            factorial: function(a) {
+            _privateFactorial = function(a) {
                 if (a === 1) {
                     return 1;
-                } else if (typeof a != "number") {
+                } else if (typeof a != "number" && !isNaN(a)) {
                     throw new Error("Input not a number");
                 } else {
-                    return this.factorial(a - 1) * a;
+                    return _privateFactorial(a - 1) * a;
                 }
             },
-            modulo: function(a, b) {
-                if (isValidType(a, b)) {
+            _privateModulo = function(a, b) {
+                if (isOfValidType(a, b)) {
                     return a % b;
                 } else {
                     throw new Error("Input not a number");
                 }
+            };
+
+        return {
+            add: function(a, b) {
+                return _privateAdd(a, b);
+            },
+            substract: function(a, b) {
+                return _privateSubstract(a, b);
+            },
+            multiply: function(a, b) {
+                return _privateMultiply(a, b);
+            },
+            divide: function(a, b) {
+                return _privateDivide(a, b);
+            },
+            factorial: function(a) {
+                return _privateFactorial(a);
+            },
+            modulo: function(a, b) {
+                return _privateModulo(a, b);
             }
         };
     })();
