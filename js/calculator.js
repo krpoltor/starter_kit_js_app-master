@@ -6,8 +6,7 @@ var
     },
     Calculator = (function() {
 
-        var self = this,
-            _privateAdd = function(a, b) {
+        var _privateAdd = function(a, b) {
                 if (isOfValidType(a, b)) {
                     return a + b;
                 } else {
