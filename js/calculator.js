@@ -4,30 +4,30 @@ var
     isOfValidType = function(a, b) {
         return (typeof a == "number" && typeof b == "number" && !isNaN(a) && !isNaN(b));
     },
-    Calculator = (function() {
+    calculator = (function() {
 
-        var _privateAdd = function(a, b) {
+        var _add = function(a, b) {
                 if (isOfValidType(a, b)) {
                     return a + b;
                 } else {
                     throw new Error("Input not a number");
                 }
             },
-            _privateSubstract = function(a, b) {
+            _substract = function(a, b) {
                 if (isOfValidType(a, b)) {
                     return a - b;
                 } else {
                     throw new Error("Input not a number");
                 }
             },
-            _privateMultiply = function(a, b) {
+            _multiply = function(a, b) {
                 if (isOfValidType(a, b)) {
                     return a * b;
                 } else {
                     throw new Error("Input not a number");
                 }
             },
-            _privateDivide = function(a, b) {
+            _divide = function(a, b) {
                 if (isOfValidType(a, b) && b != 0) {
                     return a / b;
                 } else if (b === 0) {
@@ -36,16 +36,16 @@ var
                     throw new Error("Input not a number");
                 }
             },
-            _privateFactorial = function(a) {
+            _factorial = function(a) {
                 if (a === 1) {
                     return 1;
                 } else if (typeof a != "number" && !isNaN(a)) {
                     throw new Error("Input not a number");
                 } else {
-                    return _privateFactorial(a - 1) * a;
+                    return _factorial(a - 1) * a;
                 }
             },
-            _privateModulo = function(a, b) {
+            _modulo = function(a, b) {
                 if (isOfValidType(a, b)) {
                     return a % b;
                 } else {
@@ -55,22 +55,22 @@ var
 
         return {
             add: function(a, b) {
-                return _privateAdd(a, b);
+                return _add(a, b);
             },
             substract: function(a, b) {
-                return _privateSubstract(a, b);
+                return _substract(a, b);
             },
             multiply: function(a, b) {
-                return _privateMultiply(a, b);
+                return _multiply(a, b);
             },
             divide: function(a, b) {
-                return _privateDivide(a, b);
+                return _divide(a, b);
             },
             factorial: function(a) {
-                return _privateFactorial(a);
+                return _factorial(a);
             },
             modulo: function(a, b) {
-                return _privateModulo(a, b);
+                return _modulo(a, b);
             }
         };
     })();
