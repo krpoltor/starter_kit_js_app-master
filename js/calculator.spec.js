@@ -54,8 +54,16 @@ describe('Tests', function() {
         expect(calculator.factorial(3)).toBe(6);
     });
 
-    it('should throw error when factorial', function() {
+    it('should throw error when factorial - Input not a number', function() {
         expect(calculator.factorial.bind(null, 'z')).toThrow(new Error("Input not a number."));
+    });
+
+    it('should throw error when factorial - Input equal to 0', function() {
+        expect(calculator.factorial.bind(null, 0)).toThrow(new Error("Input equal to 0."));
+    });
+
+    it('should throw error when factorial - Input less than 0', function() {
+        expect(calculator.factorial.bind(null, -10)).toThrow(new Error("Input less than 0."));
     });
 
     it('should modulo two numbers', function() {

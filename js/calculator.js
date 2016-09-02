@@ -37,6 +37,10 @@ var isOfValidType = function(a, b) {
             _factorial = function(a) {
                 if (typeof a != "number" || isNaN(a)) {
                     throw new Error("Input not a number.");
+                } else if (a === 0) {
+                    throw new Error("Input equal to 0.");
+                } else if (a <= 0) {
+                    throw new Error("Input less than 0.");
                 } else if (a === 1) {
                     return 1;
                 } else {
