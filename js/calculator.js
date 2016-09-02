@@ -1,30 +1,28 @@
 "use strict";
 
-var
-    isOfValidType = function(a, b) {
+var isOfValidType = function(a, b) {
         return (typeof a == "number" && typeof b == "number" && !isNaN(a) && !isNaN(b));
     },
     calculator = (function() {
-
         var _add = function(a, b) {
                 if (isOfValidType(a, b)) {
                     return a + b;
                 } else {
-                    throw new Error("Input not a number");
+                    throw new Error("Input not a number.");
                 }
             },
             _substract = function(a, b) {
                 if (isOfValidType(a, b)) {
                     return a - b;
                 } else {
-                    throw new Error("Input not a number");
+                    throw new Error("Input not a number.");
                 }
             },
             _multiply = function(a, b) {
                 if (isOfValidType(a, b)) {
                     return a * b;
                 } else {
-                    throw new Error("Input not a number");
+                    throw new Error("Input not a number.");
                 }
             },
             _divide = function(a, b) {
@@ -33,14 +31,14 @@ var
                 } else if (b === 0) {
                     throw new Error("Cannot divide by 0");
                 } else {
-                    throw new Error("Input not a number");
+                    throw new Error("Input not a number.");
                 }
             },
             _factorial = function(a) {
                 if (a === 1) {
                     return 1;
                 } else if (typeof a != "number" && !isNaN(a)) {
-                    throw new Error("Input not a number");
+                    throw new Error("Input not a number.");
                 } else {
                     return _factorial(a - 1) * a;
                 }
@@ -49,7 +47,7 @@ var
                 if (isOfValidType(a, b)) {
                     return a % b;
                 } else {
-                    throw new Error("Input not a number");
+                    throw new Error("Input not a number.");
                 }
             };
 
